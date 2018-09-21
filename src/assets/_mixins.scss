@@ -1,0 +1,99 @@
+// mixins
+
+$grey: rgb(95, 90, 91);
+$dark-grey: #252122;
+
+@mixin translate3d ($num1, $num2, $num3) {
+  -webkit-transform: translate3d($num1, $num2, $num3);
+  -moz-transform: translate3d($num1, $num2, $num3);
+  -o-transform: translate3d($num1, $num2, $num3);
+  -ms-transform: translate3d($num1, $num2, $num3);
+  transform: translate3d($num1, $num2, $num3);
+}
+
+@mixin linear-gradient-2colors($position, $color1, $color2, $percent1, $percent2) {
+  background: $color1;
+  background: -webkit-linear-gradient($position, $color1 $percent1, $color2 $percent2 );
+  background:    -moz-linear-gradient($position, $color1 $percent1, $color2 $percent2 );
+  background:      -o-linear-gradient($position, $color1 $percent1, $color2 $percent2 );
+  background:         linear-gradient($position, $color1 $percent1, $color2 $percent2 );
+}
+
+@mixin transition ($elements, $type, $time) {
+  $elem: unquote($elements);
+  $i: 1;
+  $x: length($elem);
+  $transition: null;
+
+  @each $el in $elem {
+
+    @if $i < $x {
+      $transition: "#{$transition} #{$el}  #{$type}  #{$time},";
+    }
+    @else {
+      $transition: "#{$transition} #{$el}  #{$type}  #{$time}";
+    }
+    $i: $i + 1;
+  }
+
+  $transition: unquote($transition);
+
+  -webkit-transition: $transition;
+  -moz-transition:    $transition;
+  transition:         $transition;
+}
+
+@mixin background-size ($size) {
+  -webkit-background-size: $size;
+  -moz-background-size: $size;
+  background-size: $size;
+}
+
+@mixin opacity ($size) {
+  -webkit-opacity: $size;
+  -moz-opacity: $size;
+  -ms-opacity: $size;
+  opacity: $size;
+}
+
+@mixin border-radius ($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius:    $radius;
+  -ms-border-radius:     $radius;
+  border-radius:         $radius;
+}
+
+@mixin font-size ($size, $lineHeight: 1) {
+  // font-size: $size + px;
+  font-size: ($size/16) + rem;
+  line-height: (($size/16) + 0.4)*$lineHeight + rem;
+}
+
+@function px-rem($px) {
+  @return $px / 16px * 1rem;
+}
+
+@mixin box-shadow ($shadow) {
+  -webkit-box-shadow: $shadow;
+  -moz-box-shadow:    $shadow;
+  -ms-box-shadow:     $shadow;
+  box-shadow:         $shadow;
+}
+
+@mixin box-sizing ($box) {
+  -webkit-box-sizing: $box;
+  -moz-box-sizing:    $box;
+  -ms-box-sizing:     $box;
+  box-sizing:         $box;
+}
+
+@mixin hover-state {
+  &:hover, &:active, &:focus {
+      @content;
+  }
+}
+
+@mixin top($px) {
+  position: relative;
+  top: $px;
+}

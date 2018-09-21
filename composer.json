@@ -1,0 +1,14 @@
+{
+    "name": "gsilveira/strutt",
+    "description": "strutt",
+    "require-dev": {
+        "laravel/lumen": "^5.7"
+    },
+    "authors": [
+        {
+            "name": "gsilveira",
+            "email": "gabriel.ch23@gmail.com"
+        }
+    ],
+    "require": {}
+}

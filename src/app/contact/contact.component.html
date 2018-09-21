@@ -1,0 +1,48 @@
+
+
+<section id="contact">
+
+  <div class="container position-relative frm-container">
+
+    <form class="frm-container" [formGroup]="frmContact" action="/contact.php">
+
+      <div class="row">
+        <div class="col pl-0">
+          <mat-form-field [floatLabel]="frmContact.value.floatLabel" class="w-100">
+            <mat-label>Nome</mat-label>
+            <input matInput placeholder="Nome completo">
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col pl-0">
+          <mat-form-field [floatLabel]="frmContact.value.floatLabel" class="w-100">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Email">
+          </mat-form-field>
+        </div>
+
+        <div class="col pl-0">
+          <mat-form-field [floatLabel]="frmContact.value.floatLabel" class="w-100">
+            <mat-label>Telefone</mat-label>
+            <input matInput placeholder="Telefone com DDD. ex: (11) 9 8076-5432">
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col pl-0">
+          <mat-form-field class="w-100">
+            <textarea matInput placeholder="Como podemos te ajudar?"></textarea>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <button>GO!</button>
+
+    </form>
+
+  </div>
+
+</section>
