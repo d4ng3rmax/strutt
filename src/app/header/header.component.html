@@ -1,16 +1,27 @@
-<header id="header" class="bg bg-main">
+<header id="header" class="bg bg-main" [ngClass]='routeData?.breadcrumb'>
 
   <div class="container div-logo">
-    <img src="/assets/images/logo-main.png" alt="Strutturale" class="logo" />
+    <img src="./assets/images/logo-main.png" alt="Strutturale" class="logo" />
   </div>
 
   <div class="container">
     <nav class="breadcrumbs">
       <a href="#home" [routerLink]="['/home']" class="anti">Home</a>
-      <a href="#contato" [routerLink]="['/contato']" class="anti">Contato</a>
+      <a class="anti" *ngIf='routeData?.breadcrumb'>{{ routeData?.breadcrumb }}</a>
     </nav>
 
-    <h1 class="main-title">Contate a Strutt</h1>
+    <h1 class="main-title">{{ routeData?.pageTitle }}</h1>
   </div>
 
 </header>
+
+<nav id="nav">
+  <div class="container">
+    <ul>
+      <li [ngClass]="!routeData?.breadcrumb ? 'on' : 'off'"><a [routerLink]="['/']">Home</a></li>
+      <li [ngClass]="routeData?.breadcrumb == 'residencial' ? 'on' : 'off'"><a [routerLink]="['/residencial']">Serviço Residencial</a></li>
+      <li [ngClass]="routeData?.breadcrumb == 'corporativo' ? 'on' : 'off'"><a [routerLink]="['/corporativo']">Serviço Corporativo</a></li>
+      <li [ngClass]="routeData?.breadcrumb == 'contato' ? 'on' : 'off'"><a [routerLink]="['/contato']">Contato</a></li>
+    </ul>
+  </div>
+</nav>

@@ -22,6 +22,25 @@ body {
 .anti { -webkit-font-smoothing: antialiased; }
 .w-100 { width: 100% !important; }
 .pl-0 { padding-left: 0; }
+.mt-30 { margin-top: 30px; }
+
+p {
+  text-align: justify;
+
+  strong {
+    font-weight: normal;
+    color: #ea9f79;
+  }
+
+  em {
+    color: #a9a9a9;
+  }
+}
+
+ul {
+  padding: 0;
+}
+
 
 #master-content {
 
@@ -33,7 +52,19 @@ body {
     background-size: cover;
 
     &.bg-main {
+      background-image: url('/assets/images/bg-003.jpg');
+    }
+
+    &.contato {
       background-image: url('/assets/images/bg-001.jpg');
+    }
+
+    &.residencial {
+      background-image: url('/assets/images/bg-004.jpg');
+    }
+
+    &.corporativo {
+      background-image: url('/assets/images/bg-005.jpg');
     }
   }
 
@@ -103,6 +134,37 @@ nav.breadcrumbs a:last-child::after {
   font-weight: bold;
   text-transform: uppercase;
   text-shadow: 1px 1px #000;
+}
+
+// Forms
+
+.frm-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.frm-container > * {
+  width: 100%;
+}
+
+.frm-container form {
+  margin-bottom: 20px;
+}
+
+.frm-container form > * {
+  margin: 5px 0;
+}
+
+.frm-container .mat-radio-button {
+  margin: 0 5px;
+}
+
+/* Mobile */
+
+@media only screen and (max-width: 800px) {
+  .main-title {
+    font-size: px-rem(35px);
+  }
 }
 
 

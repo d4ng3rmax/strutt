@@ -1,0 +1,49 @@
+li {
+  margin-left: 40px;
+  padding: 5px 0;
+
+  &.no-dot {
+    list-style: none;
+    margin-left: 0;
+  }
+
+  strong {
+    font-weight: normal;
+    color: #ea9f79;
+  }
+}
+
+p {
+  display: block;
+
+  strong {
+    color: #ea9f79;
+  }
+}
+
+br {
+  line-height: 30px;
+}
+
+.bd-top {
+  border-top: 1px solid #312925;
+  padding-top: 20px;
+}
+
+svg {
+  margin-right: 10px;
+  color: #e8c7b729;
+  position: relative;
+  font-size: 22px;
+  top: 2px;
+  display: none;
+}
+
+@media only screen and (max-width: 800px) {
+  svg {
+    display: inline-block;
+    position: absolute;
+    top: auto;
+    right: 10px;
+  }
+}

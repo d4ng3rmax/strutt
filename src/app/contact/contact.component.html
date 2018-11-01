@@ -1,16 +1,14 @@
-
-
 <section id="contact">
 
   <div class="container position-relative frm-container">
 
-    <form class="frm-container" [formGroup]="frmContact" action="/contact.php">
+    <form class="frm-container" [formGroup]="frmContact">
 
       <div class="row">
         <div class="col pl-0">
           <mat-form-field [floatLabel]="frmContact.value.floatLabel" class="w-100">
             <mat-label>Nome</mat-label>
-            <input matInput placeholder="Nome completo">
+            <input matInput placeholder="Nome completo" formControlName="name">
           </mat-form-field>
         </div>
       </div>
@@ -19,14 +17,14 @@
         <div class="col pl-0">
           <mat-form-field [floatLabel]="frmContact.value.floatLabel" class="w-100">
             <mat-label>Email</mat-label>
-            <input matInput placeholder="Email">
+            <input matInput placeholder="Email" formControlName="email">
           </mat-form-field>
         </div>
 
         <div class="col pl-0">
           <mat-form-field [floatLabel]="frmContact.value.floatLabel" class="w-100">
             <mat-label>Telefone</mat-label>
-            <input matInput placeholder="Telefone com DDD. ex: (11) 9 8076-5432">
+            <input matInput placeholder="Telefone com DDD. ex: (11) 9 8076-5432" formControlName="phone">
           </mat-form-field>
         </div>
       </div>
@@ -34,12 +32,17 @@
       <div class="row">
         <div class="col pl-0">
           <mat-form-field class="w-100">
-            <textarea matInput placeholder="Como podemos te ajudar?"></textarea>
+            <textarea matInput placeholder="Como podemos te ajudar?" formControlName="message"></textarea>
           </mat-form-field>
         </div>
       </div>
 
-      <button>GO!</button>
+      <div class="row">
+          <div class="col pl-0">
+            <button class="btn btn-secondary" (click)="onSubmit()">Enviar</button>
+          </div>
+      </div>
+
 
     </form>
 

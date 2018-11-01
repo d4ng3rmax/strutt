@@ -1,0 +1,47 @@
+<ngx-hm-carousel
+  [(ngModel)]="index"
+  (ngModelChange)="indexChanged($event)"
+  [autoplay-speed]="speed"
+  [autoplay]="true"
+  [infinite]="infinite"
+  [between-delay]="2000"
+  class="carousel c-accent">
+
+  <section ngx-hm-carousel-container class="content">
+    <article class="item cursor-pointer"
+      ngx-hm-carousel-item
+      *ngFor="let slide of slides">
+        <div class="img"
+        [style.backgroundImage]="'url('+slide.url+')'">
+
+        <h2 [innerHTML]="slide.title"></h2>
+        <p [innerHTML]="slide.text" class="text"></p>
+      </div>
+    </article>
+    <div class="bg-text" [hidden]="!hasBg"></div>
+  </section>
+
+  <ng-template #carouselPrev>
+    <div class="click-area">
+      <!-- <i class="material-icons">keyboard_arrow_left</i> -->
+      <i class="fas fa-angle-left"></i>
+    </div>
+  </ng-template>
+  <ng-template #carouselNext>
+    <div class="click-area">
+      <!-- <i class="material-icons">keyboard_arrow_right</i> -->
+      <i class="fas fa-angle-right"></i>
+    </div>
+  </ng-template>
+
+  <ng-template #carouselDot let-model>
+    <div class="ball bg-accent"
+      [class.visible]="model.index === model.currentIndex"></div>
+  </ng-template>
+
+  <ng-template #carouselProgress let-progress>
+    <div class="progress" *ngIf="progress > 0"
+    [style.width]="(direction==='right' ? progress : 100 - progress) + '%'"></div>
+  </ng-template>
+
+</ngx-hm-carousel>

@@ -6,9 +6,12 @@ import { RoutingModule } from './_routing/routing.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpModule } from '@angular/http';
+import { ToastrModule } from 'ngx-toastr';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
+import { ResidentialComponent } from './residential/residential.component';
+import { CorporativeComponent } from './corporative/corporative.component';
 import { ContactComponent } from './contact/contact.component';
 
 import {
@@ -16,8 +19,13 @@ import {
   MatCheckboxModule, MatRadioModule,
   MatSelectModule, MatAutocompleteModule,
   MatIconModule, MatChipsModule } from '@angular/material';
+
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+
+import { CarouselComponent } from './_shared/_components/carousel/carousel.component';
+
+import { NgxHmCarouselModule } from 'ngx-hm-carousel';
 
 registerLocaleData(localePt, 'pt-BR');
 
@@ -27,7 +35,10 @@ registerLocaleData(localePt, 'pt-BR');
     HomeComponent,
     ContactComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    CarouselComponent,
+    ResidentialComponent,
+    CorporativeComponent
   ],
   imports: [
     BrowserModule,
@@ -36,11 +47,14 @@ registerLocaleData(localePt, 'pt-BR');
     ReactiveFormsModule,
     FormsModule,
     HttpModule,
+    ToastrModule.forRoot(),
 
     MatInputModule, MatButtonModule, MatButtonToggleModule,
     MatCheckboxModule, MatRadioModule,
     MatSelectModule, MatAutocompleteModule,
-    MatIconModule, MatChipsModule
+    MatIconModule, MatChipsModule,
+
+    NgxHmCarouselModule
   ],
   exports: [
     ReactiveFormsModule,

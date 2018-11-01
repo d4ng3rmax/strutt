@@ -1,0 +1,27 @@
+li {
+  margin-left: 40px;
+  padding: 5px 0;
+
+  &.no-dot {
+    list-style: none;
+    margin-left: 0;
+  }
+
+  strong {
+    font-weight: normal;
+    color: #ea9f79;
+  }
+}
+
+p {
+  display: block;
+
+  strong {
+    color: #d8b4a1;
+  }
+}
+
+.bd-top {
+  border-top: 1px solid #312925;
+  padding-top: 20px;
+}

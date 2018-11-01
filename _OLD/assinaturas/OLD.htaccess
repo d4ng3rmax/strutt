@@ -1,0 +1,3 @@
+RewriteRule On
+
+RewriteRule ^mail(.*)$ mail.php [L]
